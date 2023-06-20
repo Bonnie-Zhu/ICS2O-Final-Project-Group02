@@ -113,18 +113,18 @@ class GameScene extends Phaser.Scene {
       }
     );
   }
-    moveCarsHorizontally() {
-        const moveDistance = 100; // Adjust this value to control the horizontal movement distance
-      
-        this.carGroup.getChildren().forEach((car) => {
-          this.tweens.add({
-            targets: car,
-            x: car.x + moveDistance,
-            duration: 2000, // Adjust this value to control the movement speed
-            yoyo: true,
-            repeat: -1
-          });
-        });
+  moveCarsHorizontally() {
+    const moveDistance = 100; // Adjust this value to control the horizontal movement distance
+
+    this.carGroup.getChildren().forEach((car) => {
+      this.tweens.add({
+        targets: car,
+        x: car.x + moveDistance,
+        duration: 2000, // Adjust this value to control the movement speed
+        yoyo: true,
+        repeat: -1,
+      });
+    });
   }
   update(time, delta) {
     const keyAObj = this.input.keyboard.addKey("A");
